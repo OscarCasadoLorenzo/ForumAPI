@@ -8,6 +8,7 @@ var app = express();
 
 //Load route files
 var user_routes = require('./routes/user');
+var topic_routes = require('./routes/topic');
 
 //Middlewares
 app.use(express.urlencoded({extended:false}));
@@ -17,6 +18,7 @@ app.use(express.json());
 
 //Rewrite routes
 app.use('/whyme', user_routes);
+app.use('/whyme', topic_routes);
 
 //Export module
 module.exports = app;
