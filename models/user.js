@@ -12,4 +12,11 @@ var UserSchema = Schema({
     role : String
 });
 
+//This method deletes password in all request
+UserSchema.methods.toJSON = function(){
+    var obj = this.toObject();
+    delete obj.password;
+    return obj;
+}
+
 module.exports = mongoose.model('User', UserSchema);

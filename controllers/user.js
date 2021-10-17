@@ -112,7 +112,6 @@ var controller = {
             }   
             
             if(issetUser){
-                console.log(params.password + " " + issetUser);
                 //Compare password
                 if(bcrypt.compareSync(params.password, issetUser.password)){
                     //Generar el token JWT
@@ -199,45 +198,36 @@ var controller = {
             });
         }  
 
-        //If user dont change the email we do nothing
-        if(params.email != req.user.email){
+        //Check integrity o DB (email UK)
+        User.findOne({email : params.email, _id : {$ne : req.user.sub}}, (err, issetUser) => {
+            if(issetUser){
+                return res.status(200).send({
+                    msg : "Error. This email already exists."
+                });
+            }
+            else{
+                //Search & update DB register
+                //parms: condition, data to update, options, callback
+                User.findOneAndUpdate({_id: req.user.sub}, params, {new:true}, (err, userUpdated) => {
+                    if(err){
+                        return res.status(500).send({
+                            msg : "Error. Couldn't connect to DB."
+                        });
+                    }
 
-            //Check integrity o DB (email UK)
-            User.findOne({email : params.email.toLowerCase()}, (err, issetUser) => {
-                if(err){
-                    return res.status(500).send({
-                        msg : "Error. Couldn't connect to DB."
-                    });
-                }
-                if(issetUser){
-                    return res.status(200).send({
-                        msg : "Error. This email already exists."
-                    });
-                }
-            });
+                    if(userUpdated){
+                        return res.status(200).send({
+                            msg : "User " + userUpdated._id + " update succes!"
+                        });
+                    } else{
+                        return res.status(404).send({
+                            msg : "Error. Couldn't find user in DB."
+                        });
+                    }
+                });
+            }
+        }); 
             
-        } else{
-             //Search & update DB register
-            //parms: condition, data to update, options, callback
-            User.findOneAndUpdate({_id: req.user.sub}, params, {new:true}, (err, userUpdated) => {
-                if(err){
-                    return res.status(500).send({
-                        msg : "Error. Couldn't connect to DB."
-                    });
-                }
-
-                if(userUpdated){
-                    return res.status(200).send({
-                        msg : "User " + userUpdated._id + " update succes!"
-                    });
-                } else{
-                    return res.status(404).send({
-                        msg : "Error. Couldn't find user in DB."
-                    });
-                }
-            });
-        }
-       
     }, //close update controller
 
     uploadAvatar : function(req, res){
