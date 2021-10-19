@@ -96,7 +96,6 @@ var controller = {
                 msg : "To few information."
             });
         }
-        
         if(!validate_email || !validate_password){
             return res.status(400).send({
                 msg: "Form's data isn't valid."
@@ -121,7 +120,7 @@ var controller = {
                 }
                 else{
                     return res.status(400).send({
-                        msg : "Form's data isn't valid."
+                        msg : "Incorrect password!"
                     });
                 }
 
@@ -206,8 +205,13 @@ var controller = {
                 });
             }
             else{
+                //New password should be encoded and loaded in DB
+                const salt = bcrypt.genSaltSync(saltRounds);
+                const hash = bcrypt.hashSync(params.password, salt);
+                params.password = hash;
+
                 //Search & update DB register
-                //parms: condition, data to update, options, callback
+                //function params: condition, data to update, options, callback
                 User.findOneAndUpdate({_id: req.user.sub}, params, {new:true}, (err, userUpdated) => {
                     if(err){
                         return res.status(500).send({
