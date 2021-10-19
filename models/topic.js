@@ -23,4 +23,5 @@ var TopicSchema = Schema({
 //Add methods from paginate to mongoose
 TopicSchema.plugin(mongoosePaginate);
 
+module.exports = mongoose.model('Comment', CommentSchema);
 module.exports = mongoose.model('Topic', TopicSchema);
