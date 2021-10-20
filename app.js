@@ -1,7 +1,8 @@
 'use strict'
 
 var express = require('express');
-const user = require('./models/user');
+var logger = require('morgan');
+var fs = require('fs');
 
 //Run express
 var app = express();
@@ -14,6 +15,9 @@ var comment_routes = require('./routes/comment');
 //Middlewares
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
+app.use(logger('common', {
+    stream: fs.createWriteStream('./logs/access.log', {flags: 'a'})
+}));
 
 /* 
     When we make AYAX request with jQuery or Angular
@@ -28,7 +32,6 @@ app.use((req, res, next) => {
     res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
     next();
 });
-
 
 //Rewrite routes
 app.use('/whyme', user_routes);
