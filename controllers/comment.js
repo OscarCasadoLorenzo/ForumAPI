@@ -1,8 +1,6 @@
 'use strict'
 
 var validator = require('validator');
-const topic = require('../models/topic');
-
 var Topic = require('../models/topic');
 
 var controller = {

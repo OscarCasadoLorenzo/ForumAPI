@@ -10,6 +10,9 @@ var authenticated = require('../middlewares/authenticated');
 var multiparty = require('connect-multiparty');
 var md_upload = multiparty({uploadDir : './uploads/users'});
 
+/* @swagger
+    tags : [Users]
+*/
 router.get('/users', UserController.list);
 router.get('/user/:idUser', UserController.get);
 router.post('/register', UserController.save);

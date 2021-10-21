@@ -22,6 +22,7 @@
     "validator": "^13.6.0"
   },
   "devDependencies": {
+    "mongoose-schema-jsonschema": "^2.0.1",
     "nodemon": "^2.0.12",
     "swagger-autogen": "^2.11.2",
     "swagger-ui-express": "^4.1.6"
