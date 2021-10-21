@@ -1,2 +1,4 @@
 /node_modules
 /.vscode
+/others/swagger_doc.json
+/others/access.log
