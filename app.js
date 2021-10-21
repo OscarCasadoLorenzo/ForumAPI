@@ -16,7 +16,7 @@ var comment_routes = require('./routes/comment');
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 app.use(logger('common', {
-    stream: fs.createWriteStream('./logs/access.log', {flags: 'a'})
+    stream: fs.createWriteStream('./debugFiles/access.log', {flags: 'a'})
 }));
 
 /* 

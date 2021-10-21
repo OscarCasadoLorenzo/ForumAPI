@@ -1,0 +1,808 @@
+{
+	"info": {
+		"_postman_id": "dac45cbc-072d-4a63-82e2-1544702ca17f",
+		"name": "foro-rest-node",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "userController",
+			"item": [
+				{
+					"name": "/whyme/register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Request should be ok\", function () { ",
+									"    // Equivalent to status 200",
+									"     pm.response.to.be.ok; ",
+									"     // Body must be in response",
+									"     pm.response.to.be.withBody; ",
+									"     // Response in JSON format",
+									"     pm.response.to.be.json; ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "oscar",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "casado lorenzo",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "ocl5@ocl5.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "contraseña",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/whyme/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"whyme",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/whyme/login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Request should be ok\", function () { ",
+									"    // Equivalent to status 200",
+									"     pm.response.to.be.ok; ",
+									"     // Body must be in response",
+									"     pm.response.to.be.withBody; ",
+									"     // Response in JSON format",
+									"     pm.response.to.be.json; ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "ocl5@ocl5.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "contraseña",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/whyme/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"whyme",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/whyme/users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Request should be ok\", function () { ",
+									"    // Equivalent to status 200",
+									"     pm.response.to.be.ok; ",
+									"     // Body must be in response",
+									"     pm.response.to.be.withBody; ",
+									"     // Response in JSON format",
+									"     pm.response.to.be.json; ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/whyme/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"whyme",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/whyme/user/:idUser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Request should be ok\", function () { ",
+									"    // Equivalent to status 200",
+									"     pm.response.to.be.ok; ",
+									"     // Body must be in response",
+									"     pm.response.to.be.withBody; ",
+									"     // Response in JSON format",
+									"     pm.response.to.be.json; ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/whyme/user/616a9ad186b1d7f87b62feb7",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"whyme",
+								"user",
+								"616a9ad186b1d7f87b62feb7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/whyme/update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Request should be ok\", function () { ",
+									"    // Equivalent to status 200",
+									"     pm.response.to.be.ok; ",
+									"     // Body must be in response",
+									"     pm.response.to.be.withBody; ",
+									"     // Response in JSON format",
+									"     pm.response.to.be.json; ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MTZlN2MwYmZiNjJkNGU5YWViYzYxOTAiLCJuYW1lIjoib3NjYXIiLCJlbWFpbCI6Im9jbDRAb2NsNC5jb20iLCJzdXJuYW1lIjoiY2FzYWRvIGxvcmVuem8iLCJyb2xlIjoiUk9MRV9VU0VSIiwiaW1hZ2UiOm51bGwsImlhdCI6MTYzNDYzMDY4NywiZXhwIjoxNjM0NjM0Mjg3fQ.XDKQDoiGkNiLbxvF4sSLatA3avGsiHgyqywNklRN14A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "oscarcasado",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "casadocasado",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "ocl4@ocl4.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "contraseña12345",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/whyme/update",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"whyme",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/whyme/upload-avatar/:idUser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Request should be ok\", function () { ",
+									"    // Equivalent to status 200",
+									"     pm.response.to.be.ok; ",
+									"     // Body must be in response",
+									"     pm.response.to.be.withBody; ",
+									"     // Response in JSON format",
+									"     pm.response.to.be.json; ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MTZhOWFkMTg2YjFkN2Y4N2I2MmZlYjciLCJuYW1lIjoib3NjYXIiLCJzdXJuYW1lIjoiY2FzYWRvIGxvcmVuem8iLCJyb2xlIjoiUk9MRV9VU0VSIiwiaW1hZ2UiOiJqX1BROHZaamRCTFZpdzFPeWx6UG9PWk8ucG5nIiwiaWF0IjoxNjM0MzgxNTY0LCJleHAiOjE2MzQzODUxNjR9.NAilEAy9lhpNw7aBeOe3H92R3Jrg2UD_l__TnmHuzE0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avatarFile",
+									"type": "file",
+									"src": "/home/oscar/Desktop/master-fullstack/img_avatar.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/whyme/upload-avatar/oscar",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"whyme",
+								"upload-avatar",
+								"oscar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/whyme/avatar/:fileName",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Request should be ok\", function () { ",
+									"    // Equivalent to status 200",
+									"     pm.response.to.be.ok; ",
+									"     // Body must be in response",
+									"     pm.response.to.be.withBody; ",
+									"     // Response in JSON format",
+									"     pm.response.to.be.json; ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/whyme/avatar/-gJ9lBCD10EROSpt2GETNNWD.png",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"whyme",
+								"avatar",
+								"-gJ9lBCD10EROSpt2GETNNWD.png"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "topicController",
+			"item": [
+				{
+					"name": "/whyme/topics/",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Request should be ok\", function () { ",
+									"    // Equivalent to status 200",
+									"     pm.response.to.be.ok; ",
+									"     // Body must be in response",
+									"     pm.response.to.be.withBody; ",
+									"     // Response in JSON format",
+									"     pm.response.to.be.json; ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MTZhOWFkMTg2YjFkN2Y4N2I2MmZlYjciLCJuYW1lIjoib3NjYXIiLCJzdXJuYW1lIjoiY2FzYWRvIGxvcmVuem8iLCJyb2xlIjoiUk9MRV9VU0VSIiwiaW1hZ2UiOiJuMzdLTTlDdHZfYVlCVGIwNjVBRmlRdHoucG5nIiwiaWF0IjoxNjM0NDU5NDM2LCJleHAiOjE2MzQ0NjMwMzZ9.FoK57f1lkwrGDpMpfEiZtoj8sAturM83vRTfdMWlwo4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "¿Có",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "Hola buenas estoy interesado en crear uno de estos bucles pero no tengo claro como. Gracias de antemano.",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "lang",
+									"value": "C++",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/whyme/topics/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"whyme",
+								"topics",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/whyme/topics/",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Request should be ok\", function () { ",
+									"    // Equivalent to status 200",
+									"     pm.response.to.be.ok; ",
+									"     // Body must be in response",
+									"     pm.response.to.be.withBody; ",
+									"     // Response in JSON format",
+									"     pm.response.to.be.json; ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/whyme/topics/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"whyme",
+								"topics",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/whyme/topics/user/:idUser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Request should be ok\", function () { ",
+									"    // Equivalent to status 200",
+									"     pm.response.to.be.ok; ",
+									"     // Body must be in response",
+									"     pm.response.to.be.withBody; ",
+									"     // Response in JSON format",
+									"     pm.response.to.be.json; ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/whyme/topics/user/616a9ad186b1d7f87b62feb7",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"whyme",
+								"topics",
+								"user",
+								"616a9ad186b1d7f87b62feb7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/whyme/topics/:idTopic",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Request should be ok\", function () { ",
+									"    // Equivalent to status 200",
+									"     pm.response.to.be.ok; ",
+									"     // Body must be in response",
+									"     pm.response.to.be.withBody; ",
+									"     // Response in JSON format",
+									"     pm.response.to.be.json; ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/whyme/topic/616abf289a78b48ac8d0fed3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"whyme",
+								"topic",
+								"616abf289a78b48ac8d0fed3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "whyme/topic/:IdTopic",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Request should be ok\", function () { ",
+									"    // Equivalent to status 200",
+									"     pm.response.to.be.ok; ",
+									"     // Body must be in response",
+									"     pm.response.to.be.withBody; ",
+									"     // Response in JSON format",
+									"     pm.response.to.be.json; ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MTZiZTc4NTY1NjdiOTY5Yjg5ZmVmZmIiLCJuYW1lIjoib3NjYXIiLCJzdXJuYW1lIjoiY2FzYWRvIGxvcmVuem8iLCJyb2xlIjoiUk9MRV9VU0VSIiwiaW1hZ2UiOm51bGwsImlhdCI6MTYzNDQ2MTU4MSwiZXhwIjoxNjM0NDY1MTgxfQ.lAjYvwFIyCcyb4_R9eAxR9C16-P9d2-oUK4XoPc6eSE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "mod",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "lang",
+									"value": "mod",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "mod",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/whyme/topics/616be4b1e3367f7cc246a3e6",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"whyme",
+								"topics",
+								"616be4b1e3367f7cc246a3e6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/whyme/topics/:idTopic",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Request should be ok\", function () { ",
+									"    // Equivalent to status 200",
+									"     pm.response.to.be.ok; ",
+									"     // Body must be in response",
+									"     pm.response.to.be.withBody; ",
+									"     // Response in JSON format",
+									"     pm.response.to.be.json; ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MTZiZTc4NTY1NjdiOTY5Yjg5ZmVmZmIiLCJuYW1lIjoib3NjYXIiLCJzdXJuYW1lIjoiY2FzYWRvIGxvcmVuem8iLCJyb2xlIjoiUk9MRV9VU0VSIiwiaW1hZ2UiOm51bGwsImlhdCI6MTYzNDQ2MzU5NiwiZXhwIjoxNjM0NDY3MTk2fQ.rzjHJsjADHhnXe3bAMB_zjzGP8DsouHg7z06UYiAjmg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/whyme/topics/616abf279a78b48ac8d0fed1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"whyme",
+								"topics",
+								"616abf279a78b48ac8d0fed1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "commentController",
+			"item": [
+				{
+					"name": "/whyme/topics/:idTopic",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Request should be ok\", function () { ",
+									"    // Equivalent to status 200",
+									"     pm.response.to.be.ok; ",
+									"     // Body must be in response",
+									"     pm.response.to.be.withBody; ",
+									"     // Response in JSON format",
+									"     pm.response.to.be.json; ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MTZlN2MwYmZiNjJkNGU5YWViYzYxOTAiLCJuYW1lIjoib3NjYXJjYXNhZG8iLCJlbWFpbCI6Im9jbDRAb2NsNC5jb20iLCJzdXJuYW1lIjoiY2FzYWRvY2FzYWRvIiwicm9sZSI6IlJPTEVfVVNFUiIsImltYWdlIjpudWxsLCJpYXQiOjE2MzQ2NjU0NzksImV4cCI6MTYzNDY2OTA3OX0._pj51poPsgNFiy28-j3HdJXIG0PU7pC2sBnUdmjRaoE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "content",
+									"value": "genial",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/whyme/topics/616abf279a78b48ac8d0fed1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"whyme",
+								"topics",
+								"616abf279a78b48ac8d0fed1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/whyme/topics/:idTopic/:idComment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Request should be ok\", function () { ",
+									"    // Equivalent to status 200",
+									"     pm.response.to.be.ok; ",
+									"     // Body must be in response",
+									"     pm.response.to.be.withBody; ",
+									"     // Response in JSON format",
+									"     pm.response.to.be.json; ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MTZhOWFkMTg2YjFkN2Y4N2I2MmZlYjciLCJuYW1lIjoib3NjYXIiLCJlbWFpbCI6Im9jbDVAb2NsNS5jb20iLCJzdXJuYW1lIjoiY2FzYWRvIGxvcmVuem8iLCJyb2xlIjoiUk9MRV9VU0VSIiwiaW1hZ2UiOiJuMzdLTTlDdHZfYVlCVGIwNjVBRmlRdHoucG5nIiwiaWF0IjoxNjM0NjY2NjgzLCJleHAiOjE2MzQ2NzAyODN9.OW8ZnQ0BOFNwmOnw-qiZSjVBoeAxjCJOl74SUrVFRKw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "content",
+									"value": "he cambiado el contenido de hola comentario",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/whyme/topics/616abf279a78b48ac8d0fed1/616f08766e2b84a3c773a76f",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"whyme",
+								"topics",
+								"616abf279a78b48ac8d0fed1",
+								"616f08766e2b84a3c773a76f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "whyme/topics/:idTopic/:idComment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Request should be ok\", function () { ",
+									"    // Equivalent to status 200",
+									"     pm.response.to.be.ok; ",
+									"     // Body must be in response",
+									"     pm.response.to.be.withBody; ",
+									"     // Response in JSON format",
+									"     pm.response.to.be.json; ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MTZhOWFkMTg2YjFkN2Y4N2I2MmZlYjciLCJuYW1lIjoib3NjYXIiLCJlbWFpbCI6Im9jbDVAb2NsNS5jb20iLCJzdXJuYW1lIjoiY2FzYWRvIGxvcmVuem8iLCJyb2xlIjoiUk9MRV9VU0VSIiwiaW1hZ2UiOiJuMzdLTTlDdHZfYVlCVGIwNjVBRmlRdHoucG5nIiwiaWF0IjoxNjM0NjY2OTk3LCJleHAiOjE2MzQ2NzA1OTd9.W8Or9uLG8U9uX8ElkSdKUyniywFhL1nmBwCIyrFwIMo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/whyme/topics/616abf279a78b48ac8d0fed1/616f09de255ca1b8bd8bdd3e",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"whyme",
+								"topics",
+								"616abf279a78b48ac8d0fed1",
+								"616f09de255ca1b8bd8bdd3e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
