@@ -71,7 +71,8 @@ var controller = {
                     }
                     if(userStored){
                         return res.status(201).send({
-                            msg : "New user register succed!"
+                            msg : "New user register succed!",
+                            user : userStored
                         });
                     }
                 })
