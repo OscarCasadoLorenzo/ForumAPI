@@ -1,7 +1,5 @@
 'use strict'
 
-
-
 module.exports = {
     PORT : process.env.PORT || 3999,
     TOKEN_TIME : 60,
