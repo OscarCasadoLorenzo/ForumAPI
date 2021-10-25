@@ -117,7 +117,8 @@ var controller = {
                 if(bcrypt.compareSync(params.password, issetUser.password)){
                     //Generar el token JWT
                     return res.status(200).send({
-                        token : jwt.createToken(issetUser)
+                        token : jwt.createToken(issetUser),
+                        user : issetUser
                     });
                 }
                 else{
