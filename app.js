@@ -14,6 +14,7 @@ var app = express();
 var user_routes = require('./routes/user');
 var topic_routes = require('./routes/topic');
 var comment_routes = require('./routes/comment');
+var cors = require('cors');
 
 //Middlewares
 app.use(express.urlencoded({extended:false}));
@@ -25,16 +26,11 @@ app.use('/doc', swaggerUI.serve, swaggerUI.setup(swaggerFile));
 /* 
     When we make AYAX request with jQuery or Angular
     to an API REST frecuently we will have problems
-    with the CORS. 
+    with the CORS. Specifficly when server or port
+    is different between client and server.
     To solve it, we can add this middleware
 */
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
-    res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
-    next();
-});
+app.use(cors());
 
 //Rewrite routes
 app.use('/whyme', user_routes);

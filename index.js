@@ -3,11 +3,12 @@ var mongoose = require('mongoose');
 
 const conf = require('./config');
 const app = require('./app');
+const config = require('./config');
 
 //Sentencia para poder utilizar promesas
 mongoose.Promise = global.Promise;
 
-mongoose.connect('mongodb://localhost:27017/api_rest_node', {useNewUrlParser: true})
+mongoose.connect(config.ATLAS_DB, {useNewUrlParser: true})
 .then(() =>{
     console.log('DB connection ok');
 

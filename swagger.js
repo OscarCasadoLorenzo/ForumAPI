@@ -1,8 +1,7 @@
 var swaggerAutogen = require('swagger-autogen')()
 
 var jsonSchema = require('mongoose-schema-jsonschema')();
-const dotJson = require('dot-json');
-var dotJSON = require('dot-json');
+
 
 var Topic = require('./models/topic');
 var User = require('./models/user');
