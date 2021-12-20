@@ -1,7 +1,7 @@
 'use strict'
 
 var validator = require('validator');
-var Topic = require('../models/topic');
+var Topic = require('../models/topic'); 
 
 var controller = {
     save : function(req, res){
@@ -42,7 +42,7 @@ var controller = {
                 user : req.user.sub,
                 content : params.content
             }
-            
+
             issetTopic.comments.push(newComment);
 
             //Save comment

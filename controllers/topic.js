@@ -1,7 +1,8 @@
 'use strict'
 
 var validator = require('validator');
-var Topic = require('../models/topic');
+var {Topic} = require('../models/topic');
+var {Comment} = require('../models/topic');
 
 var controller = {
 
@@ -121,6 +122,7 @@ var controller = {
 
         Topic.findById(idTopic)
         .populate('user')
+        .populate('comments.user')
         .exec((err, issetTopic) => {
             if(err){
                 return res.status(503).send({

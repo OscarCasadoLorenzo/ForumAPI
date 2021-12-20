@@ -17,4 +17,4 @@ mongoose.connect(config.ATLAS_DB, {useNewUrlParser: true})
         console.log('Server http://localhost:3999 is running...');
     })
 })
-.catch(error => console.log(error))
+.catch(err => console.error(Error, err.message))
