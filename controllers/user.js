@@ -46,7 +46,7 @@ var controller = {
         newUser.name = params.name;
         newUser.surname = params.surname;
         newUser.role = 'ROLE_USER';
-        newUser.image = null;
+        newUser.image = 'default.png';
 
         //Verify if user exists
         User.findOne({email : newUser.email}, (err, issetUser) => {
